@@ -1,0 +1,1131 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy birthday, Vladochka</title>
+    <style>
+      :root {
+        --bg: #120b10;
+        --bg-2: #1b1016;
+        --bg-3: #25151d;
+        --panel: rgba(38, 23, 31, 0.8);
+        --panel-soft: rgba(58, 36, 46, 0.9);
+        --line: rgba(255, 224, 232, 0.12);
+        --text: #f8edf2;
+        --muted: #d7b4c2;
+        --rose: #d79bb1;
+        --rose-deep: #9d5b73;
+        --violet: #7b5d8a;
+        --gold: #d7b77d;
+        --shadow: rgba(8, 5, 8, 0.7);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background:
+          radial-gradient(circle at top, rgba(179, 117, 143, 0.16), transparent 22%),
+          radial-gradient(circle at bottom right, rgba(123, 93, 138, 0.18), transparent 24%),
+          linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      img { display: block; max-width: 100%; }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(18, 11, 16, 0.7);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 78px;
+      }
+
+      .language-switch {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+
+      .language-label {
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+
+      .language-switch select {
+        max-width: 100%;
+        min-height: 40px;
+        padding: 8px 30px 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background-color: #1b1016;
+        color: var(--text);
+        font: inherit;
+        font-size: 0.78rem;
+        cursor: pointer;
+      }
+
+      .language-switch option {
+        background: #1b1016;
+        color: var(--text);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--rose), var(--violet));
+        font-weight: bold;
+        box-shadow: 0 0 30px rgba(215, 155, 177, 0.35);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover { transform: translateY(-1px); }
+
+      .hero {
+        padding: 88px 0 64px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 44px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(215, 155, 177, 0.08);
+        color: var(--muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 6vw, 6rem);
+        line-height: 0.94;
+        letter-spacing: -0.05em;
+        margin: 24px 0 20px;
+      }
+
+      .lead {
+        max-width: 660px;
+        font-size: 1.08rem;
+        color: var(--muted);
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        min-height: 54px;
+        padding: 0 24px;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+        color: #fff;
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+        color: var(--text);
+      }
+
+      .portrait-card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        padding: 22px;
+        box-shadow: 0 28px 80px var(--shadow);
+      }
+
+      .portrait {
+        min-height: 500px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        background:
+          linear-gradient(180deg, rgba(17, 10, 15, 0.18), rgba(17, 10, 15, 0.82)),
+          url('apple_XD.jpg') center/cover no-repeat;
+      }
+
+      .portrait::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(157, 91, 115, 0.25), transparent 36%, rgba(123, 93, 138, 0.28));
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .stat {
+        padding: 18px 12px;
+        text-align: center;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.025);
+        border: 1px solid var(--line);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.8rem;
+        margin-bottom: 4px;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .section {
+        padding: 28px 0 90px;
+      }
+
+      .section-head {
+        text-align: center;
+        margin-bottom: 34px;
+      }
+
+      .section-head h2 {
+        margin: 0 0 12px;
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        letter-spacing: -0.04em;
+      }
+
+      .section-head p {
+        max-width: 780px;
+        margin: 0 auto;
+        color: var(--muted);
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+        align-items: center;
+      }
+
+      .story-box,
+      .quote-box {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 30px;
+      }
+
+      .story-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 26px 0 0;
+        display: grid;
+        gap: 18px;
+      }
+
+      .story-box li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: var(--muted);
+      }
+
+      .character-search-area {
+        position: relative;
+      }
+
+      .character-search {
+        position: absolute;
+        z-index: 5;
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 58px;
+        padding: 2px;
+        border: 0;
+        border-radius: 10px;
+        background: transparent;
+        opacity: 0.72;
+        cursor: pointer;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .character-search:hover,
+      .character-search:focus-visible {
+        opacity: 1;
+        transform: scale(1.12);
+      }
+
+      .character-search:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 2px;
+      }
+
+      .character-search img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        image-rendering: pixelated;
+      }
+
+      .hunt-status {
+        margin: 20px 0 12px;
+        color: var(--muted);
+      }
+
+      .hunt-next:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .kiss-overlay {
+        position: fixed;
+        z-index: 100;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .kiss-animation {
+        position: absolute;
+        display: grid;
+        justify-items: center;
+        gap: 4px;
+        color: #fff;
+        text-shadow: 0 4px 24px rgba(8, 5, 8, 0.8);
+        transform: translate(-50%, -50%);
+        animation: send-kiss 2s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+      }
+
+      .kiss-emoji {
+        font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+        font-size: clamp(5rem, 22vw, 9rem);
+        line-height: 1;
+      }
+
+      .kiss-caption {
+        padding: 4px 12px;
+        border: 1px solid rgba(255, 224, 232, 0.24);
+        border-radius: 999px;
+        background: rgba(18, 11, 16, 0.8);
+        font-size: clamp(1rem, 4vw, 1.4rem);
+        font-weight: 700;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @keyframes send-kiss {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.25) rotate(-18deg);
+        }
+        18% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.1) rotate(8deg);
+        }
+        68% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1) rotate(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, calc(-50% - 22vh)) scale(1.25) rotate(12deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .kiss-animation {
+          animation-duration: 3s;
+          animation-name: show-kiss;
+        }
+
+        @keyframes show-kiss {
+          0%, 85% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gold), var(--rose));
+        margin-top: 10px;
+        flex-shrink: 0;
+      }
+
+      .quote {
+        margin: 0 0 18px;
+        font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+        line-height: 1.35;
+        font-style: italic;
+      }
+
+      .quote-box p:last-child {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 18px;
+      }
+
+      .photo-card {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+      }
+
+      .photo {
+        height: 260px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .video {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        background: transparent;
+        object-fit: cover;
+      }
+
+      .local-video-warning {
+        margin: 0 0 24px;
+        padding: 14px 18px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--panel);
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .photo-card figcaption {
+        padding: 16px 14px 18px;
+      }
+
+      .photo-card h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+
+      .photo-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      footer {
+        padding: 26px 0 42px;
+        text-align: center;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .story-grid,
+        .gallery-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+      }
+
+      @media (max-width: 560px) {
+        .container {
+          width: min(100% - 20px, 1180px);
+        }
+
+        .nav {
+          min-height: 0;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+          padding: 10px 0;
+        }
+
+        .brand {
+          width: 100%;
+          gap: 9px;
+          font-size: 0.74rem;
+        }
+
+        .language-switch {
+          width: 100%;
+          justify-content: space-between;
+          margin-left: 0;
+        }
+
+        .language-label {
+          font-size: 0.82rem;
+        }
+
+        .language-switch select {
+          min-height: 44px;
+          min-width: 150px;
+          padding: 8px 32px 8px 12px;
+          font-size: 0.86rem;
+        }
+
+        .brand-mark {
+          width: 34px;
+          height: 34px;
+        }
+
+        .hero {
+          padding: 48px 0 42px;
+        }
+
+        .hero-grid {
+          gap: 28px;
+        }
+
+        h1 {
+          font-size: clamp(2.55rem, 12vw, 3.8rem);
+          margin: 18px 0 16px;
+          overflow-wrap: anywhere;
+        }
+
+        .lead {
+          font-size: 1rem;
+        }
+
+        .cta-row {
+          gap: 10px;
+          margin-top: 22px;
+        }
+
+        .btn {
+          width: 100%;
+          min-height: 50px;
+        }
+
+        .portrait-card {
+          padding: 12px;
+          border-radius: 22px;
+        }
+
+        .portrait {
+          min-height: 340px;
+          border-radius: 16px;
+        }
+
+        .stats {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 8px;
+          margin-top: 12px;
+        }
+
+        .stat {
+          min-width: 0;
+          padding: 10px 4px;
+          border-radius: 14px;
+        }
+
+        .stat strong {
+          margin-bottom: 5px;
+          font-size: clamp(0.75rem, 3.8vw, 0.95rem);
+          line-height: 1.25;
+          overflow-wrap: anywhere;
+        }
+
+        .stat span {
+          display: block;
+          font-size: 0.7rem;
+          line-height: 1.3;
+          overflow-wrap: anywhere;
+        }
+
+        .section {
+          padding: 18px 0 56px;
+        }
+
+        .section-head {
+          margin-bottom: 24px;
+        }
+
+        .section-head h2 {
+          font-size: clamp(2rem, 9vw, 2.8rem);
+        }
+
+        .story-box,
+        .quote-box {
+          padding: 22px 18px;
+          border-radius: 22px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .photo {
+          height: 280px;
+        }
+
+        footer {
+          padding: 22px 0 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">V</div>
+          <span data-i18n="brand">Я тебя безумно сильно люблю</span>
+        </div>
+        <label class="language-switch">
+          <span class="language-label" data-language-label>Язык</span>
+          <select aria-label="Выбор языка" data-language-select>
+            <option value="ru">Русский</option>
+            <option value="uk">Українська</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1 data-i18n="greeting">Любимая, с днем рождения</h1>
+            <p class="lead" data-i18n="greetingText">
+              Желаю тебе счастья, здоровья и исполнения всех твоих желаний. Пусть каждый день будет наполнен радостью, любовью и вдохновением. Я тебя очень люблю и ценю каждый момент, проведенный вместе.
+            </p>
+
+          </div>
+
+          <div class="portrait-card">
+            <div class="portrait"></div>
+            <div class="stats">
+              <div class="stat">
+                <strong data-i18n="phraseLabel">Фразочка</strong>
+                <span>"бебебе"</span>
+              </div>
+              <div class="stat">
+                <strong data-i18n="statusLabel">Статус</strong>
+                <span data-i18n="statusValue">любимость</span>
+              </div>
+              <div class="stat">
+                <strong data-i18n="timeLabel">Время</strong>
+                <span data-i18n="timeValue">7368часов</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="story">
+        <div class="container story-grid">
+          <div class="story-box">
+            <span class="eyebrow" data-i18n="factsTitle">Мини фактики</span>
+            <h2 style="margin: 18px 0 0; font-size: clamp(2rem, 3vw, 3rem);"></h2>
+            <ul>
+              <li><span class="dot"></span><span data-i18n="fact1">Когда я отправил первое сообщение, я не думал, что мы столько пройдем вместе.</span></li>
+              <li><span class="dot"></span><span data-i18n="fact2">После первой встрнчи, я думал только о тебе.</span></li>
+              <li><span class="dot"></span><span data-i18n="fact3">Когда я не сдержываю слово перед тобой, я чувствую себя настолько хуево, что аж выворачивает.</span></li>
+            </ul>
+          </div>
+
+          <div class="quote-box">
+            <p class="quote" data-i18n="quote">"Кошечки красивые, а ты еще красивее"</p>
+            <p data-i18n="quoteAuthor">— Твой кошкомальчик</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="container">
+          <div class="section-head">
+            <h2 data-i18n="galleryTitle">Мини альбомчик</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="photo-card">
+              <div class="photo" style="background-image: url('Ocean.jpg');"></div>
+              <figcaption>
+                <h3 data-i18n="photo1Title">Океан</h3>
+                <p data-i18n="photo1Text1">Португалия, океан, спокойствие, красота.</p>
+                <p data-i18n="photo1Text2">Это то, о чем мне говорит это фото.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <div class="photo" style="background-image: url('vld_a.jpg');"></div>
+              <figcaption>
+                <h3 data-i18n="photo2Title">Ебанати</h3>
+                <p data-i18n="photo2Text">Особенний день, который ты сделала еще более особенным.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <div class="photo" style="background-image: url('cats.jpg');"></div>
+              <figcaption>
+                <h3 data-i18n="photo3Title">Китики</h3>
+                <p data-i18n="photo3Text">Просто котики, ниче такого.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <div class="photo" style="background-image: url('Beautiful.jpg');"></div>
+              <figcaption>
+                <h3 data-i18n="photo4Title">Красота</h3>
+                <p data-i18n="photo4Text">Это напоминание, то насколько ты прекрасна.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <div class="photo" style="background-image: url('Halloween.jpg');"></div>
+              <figcaption>
+                <h3 data-i18n="photo5Title">Halloween</h3>
+                <p data-i18n="photo5Text">Моя любимая совместная фотка</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <video class="video" data-video-src="firrst1.mp4" loop muted playsinline preload="none" aria-label="Первое совместное видео" data-i18n-aria="video1Title"></video>
+              <figcaption>
+                <h3 data-i18n="video1Title">Первое совместное видео</h3>
+                <p data-i18n="video1Text">Наше первое совместное видео, которое навсегда останется в моей памяти.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <video class="video" data-video-src="bb1.MP4" loop muted playsinline preload="none" aria-label="Відео bb1" data-i18n-aria="video2Title"></video>
+              <figcaption>
+                <h3 data-i18n="video2Title">Липсик с чолкой</h3>
+                <p data-i18n="video2Text">А тут ты тока подстригла чолку.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <video class="video" data-video-src="park.MP4" loop muted playsinline preload="none" aria-label="Відео park" data-i18n-aria="video3Title"></video>
+              <figcaption>
+                <h3 data-i18n="video3Title">Топ топ в шкилку</h3>
+                <p data-i18n="video3Text">Мне просто нравится этот липсик</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <video class="video" data-video-src="port.MP4" loop muted playsinline preload="none" aria-label="Відео port" data-i18n-aria="video4Title"></video>
+              <figcaption>
+                <h3 data-i18n="video4Title">Красивый липсики у океана</h3>
+                <p data-i18n="video4Text">Люблю тебя, очень очень сильно</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <video class="video" data-video-src="run.MP4" loop muted playsinline preload="none" aria-label="Відео run" data-i18n-aria="video5Title"></video>
+              <figcaption>
+                <h3 data-i18n="video5Title">Бежит "манюня"</h3>
+                <p data-i18n="video5Text">Это было ведь совсем недавно.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <video class="video" data-video-src="school.MP4" loop muted playsinline preload="none" aria-label="Відео school" data-i18n-aria="video6Title"></video>
+              <figcaption>
+                <h3 data-i18n="video6Title">Первый день школы</h3>
+                <p data-i18n="video6Text">Первое сентября.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <video class="video" data-video-src="us.MP4" loop muted playsinline preload="none" aria-label="Відео us" data-i18n-aria="video7Title"></video>
+              <figcaption>
+                <h3 data-i18n="video7Title">Чиста два китика</h3>
+                <p data-i18n="video7Text">А вот тут мы втываем около бонаркиы.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <video class="video" data-video-src="white.MP4" loop muted playsinline preload="none" aria-label="Відео white" data-i18n-aria="video8Title"></video>
+              <figcaption>
+                <h3 data-i18n="video8Title">Моя красивеькая Velli_xv</h3>
+                <p data-i18n="video8Text">Ты самая красивая девочка на свете.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="story-box">
+            <span class="eyebrow" data-i18n="taskTitle">Задание</span>
+            <h2 style="margin: 18px 0 0; font-size: clamp(2rem, 3vw, 3rem);"></h2>
+            <ul>
+              <li><span class="dot"></span><span data-i18n="taskText">Нажми на всех персонажей.</span></li>
+            </ul>
+          </div>
+          <p class="hunt-status" id="hunt-status" aria-live="polite" data-i18n="huntStatus">Нашла: 0/16</p>
+          <button class="btn btn-primary hunt-next" id="hunt-next" type="button" disabled>
+            <span data-i18n="huntLocked">Сначала нужно на всех тыкнуть.</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contacts">
+      <div class="container">
+        <p style="margin: 0;" data-i18n="footer">Все для тебя, милая!</p>
+      </div>
+    </footer>
+    <div class="kiss-overlay" id="kiss-overlay" aria-hidden="true"></div>
+    <p class="visually-hidden" id="kiss-announcement" aria-live="polite"></p>
+    <script>
+      if (window.location.protocol === "file:" && window.location.pathname.endsWith("/4vld.html")) {
+        window.location.replace("http://127.0.0.1:8000/4vld.html");
+      }
+
+      const videos = document.querySelectorAll("video[data-video-src]");
+
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+
+          if (entry.isIntersecting) {
+            if (!video.src) {
+              video.addEventListener("loadedmetadata", () => {
+                video.style.aspectRatio = `${video.videoWidth} / ${video.videoHeight}`;
+              }, { once: true });
+              video.src = video.dataset.videoSrc;
+            }
+
+            video.play().catch((error) => {
+              if (error.name !== "AbortError") {
+                console.error(`Could not play video: ${video.dataset.videoSrc}`, error);
+              }
+            });
+          } else {
+            video.pause();
+          }
+          });
+      }, { rootMargin: "100px" });
+
+      videos.forEach((video) => videoObserver.observe(video));
+
+      const characterPlacements = [
+        { id: "1", image: "1 (1).png", selector: ".hero-grid > div:first-child", top: "12px", right: "12px" },
+        { id: "2", image: "2.png", selector: ".portrait-card", top: "10px", left: "10px" },
+        { id: "3", image: "3.png", selector: ".stat:nth-child(1)", bottom: "4px", right: "4px" },
+        { id: "4", image: "4.png", selector: ".stat:nth-child(2)", top: "4px", left: "4px" },
+        { id: "5", image: "5.png", selector: ".stat:nth-child(3)", bottom: "4px", left: "4px" },
+        { id: "6", image: "6.png", selector: ".story-grid .story-box", top: "12px", right: "12px" },
+        { id: "7", image: "7.png", selector: ".quote-box", bottom: "10px", left: "10px" },
+        { id: "8", image: "8.png", selector: "#gallery .photo-card:nth-of-type(1)", top: "8px", left: "8px" },
+        { id: "9", image: "9.png", selector: "#gallery .photo-card:nth-of-type(2)", top: "8px", right: "8px" },
+        { id: "10", image: "10.png", selector: "#gallery .photo-card:nth-of-type(3)", bottom: "8px", left: "8px" },
+        { id: "11", image: "11.png", selector: "#gallery .photo-card:nth-of-type(4)", bottom: "8px", right: "8px" },
+        { id: "12", image: "12.png", selector: "#gallery .photo-card:nth-of-type(5)", top: "50%", left: "8px" },
+        { id: "13", image: "13.png", selector: "#gallery .photo-card:nth-of-type(6)", top: "8px", left: "8px" },
+        { id: "14", image: "14.png", selector: "#gallery .photo-card:nth-of-type(7)", top: "8px", right: "8px" },
+        { id: "15", image: "15.png", selector: "#gallery .photo-card:nth-of-type(8)", bottom: "8px", left: "8px" },
+        { id: "16", image: "16.png", selector: "#gallery .photo-card:nth-of-type(9)", bottom: "8px", right: "8px" }
+      ];
+      const huntStatus = document.querySelector("#hunt-status");
+      const huntNext = document.querySelector("#hunt-next");
+      const huntNextLabel = huntNext.querySelector("[data-i18n]");
+      const kissOverlay = document.querySelector("#kiss-overlay");
+      const kissAnnouncement = document.querySelector("#kiss-announcement");
+      const foundCharacters = new Set();
+      let kissSent = false;
+      const translations = {
+        ru: {
+          pageTitle: "Happy birthday, Vladochka",
+          brand: "Я тебя безумно сильно люблю",
+          greeting: "Любимая, с днем рождения",
+          greetingText: "Желаю тебе счастья, здоровья и исполнения всех твоих желаний. Пусть каждый день будет наполнен радостью, любовью и вдохновением. Я тебя очень люблю и ценю каждый момент, проведенный вместе.",
+          phraseLabel: "Фразочка",
+          statusLabel: "Статус",
+          statusValue: "любимость",
+          timeLabel: "Время",
+          timeValue: "7368 часов",
+          factsTitle: "Мини фактики",
+          fact1: "Когда я отправил первое сообщение, я не думал, что мы столько пройдем вместе.",
+          fact2: "После первой встрнчи, я думал только о тебе.",
+          fact3: "Когда я не сдержываю слово перед тобой, я чувствую себя настолько хуево, что аж выворачивает.",
+          quote: "\"Кошечки красивые, а ты еще красивее\"",
+          quoteAuthor: "— Твой кошкомальчик",
+          galleryTitle: "Мини альбомчик",
+          photo1Title: "Океан",
+          photo1Text1: "Португалия, океан, спокойствие, красота.",
+          photo1Text2: "Это то, о чем мне говорит это фото.",
+          photo2Title: "Ебанати",
+          photo2Text: "Особенний день, который ты сделала еще более особенным.",
+          photo3Title: "Китики",
+          photo3Text: "Просто котики, ниче такого.",
+          photo4Title: "Красота",
+          photo4Text: "Это напоминание, то насколько ты прекрасна.",
+          photo5Title: "Halloween",
+          photo5Text: "Моя любимая совместная фотка",
+          video1Title: "Первое совместное видео",
+          video1Text: "Наше первое совместное видео, которое навсегда останется в моей памяти.",
+          video2Title: "Липсик с чолкой",
+          video2Text: "А тут ты тока подстригла чолку.",
+          video3Title: "Топ топ в шкилку",
+          video3Text: "Мне просто нравится этот липсик",
+          video4Title: "Красивый липсики у океана",
+          video4Text: "Люблю тебя, очень очень сильно",
+          video5Title: "Бежит \"манюня\"",
+          video5Text: "Это было ведь совсем недавно.",
+          video6Title: "Первый день школы",
+          video6Text: "Первое сентября.",
+          video7Title: "Чиста два китика",
+          video7Text: "А вот тут мы втываем около бонаркиы.",
+          video8Title: "Моя красивеькая Velli_xv",
+          video8Text: "Ты самая красивая девочка на свете.",
+          taskTitle: "Задание",
+          taskText: "Нажми на всех персонажей.",
+          huntStatus: "Нашла: {count}/16",
+          huntLocked: "Сначала нужно на всех тыкнуть.",
+          kissAction: "Отправить поцелуй",
+          kissMessage: "Чмок!",
+          kissAnnouncement: "Поцелуй отправлен!",
+          characterLabel: "Найти персонажа {id}",
+          footer: "Все для тебя, милая!",
+          videoWarning: "Видео не загружаются при прямом открытии файла. Запустите open_site.bat, чтобы открыть страницу через сервер."
+        },
+        uk: {
+          pageTitle: "З днем народження, Владочко",
+          brand: "Я тебе безмежно сильно кохаю",
+          greeting: "Кохана, з днем народження",
+          greetingText: "Бажаю тобі щастя, здоров’я та здійснення всіх твоїх бажань. Нехай кожен день буде сповнений радості, любові та натхнення. Я тебе дуже кохаю і ціную кожну мить, проведену разом.",
+          phraseLabel: "Фразочка",
+          statusLabel: "Статус",
+          statusValue: "коханість",
+          timeLabel: "Час",
+          timeValue: "7368 годин",
+          factsTitle: "Мініфакти",
+          fact1: "Коли я надіслав перше повідомлення, я не думав, що ми стільки пройдемо разом.",
+          fact2: "Після першої зустрічі я думав лише про тебе.",
+          fact3: "Коли я не дотримуюся слова перед тобою, мені настільки хріново, що аж вивертає.",
+          quote: "\"Котики гарні, а ти ще гарніша\"",
+          quoteAuthor: "— Твій котохлопчик",
+          galleryTitle: "Мініальбом",
+          photo1Title: "Океан",
+          photo1Text1: "Португалія, океан, спокій, краса.",
+          photo1Text2: "Саме про це мені говорить це фото.",
+          photo2Title: "Єбанати",
+          photo2Text: "Особливий день, який ти зробила ще особливішим.",
+          photo3Title: "Котики",
+          photo3Text: "Просто котики, нічого такого.",
+          photo4Title: "Краса",
+          photo4Text: "Це нагадування про те, наскільки ти прекрасна.",
+          photo5Title: "Геловін",
+          photo5Text: "Моє улюблене спільне фото",
+          video1Title: "Перше спільне відео",
+          video1Text: "Наше перше спільне відео, яке назавжди залишиться в моїй пам’яті.",
+          video2Title: "Ліпсик із чолкою",
+          video2Text: "А тут ти щойно підстригла чолку.",
+          video3Title: "Топ-топ до школи",
+          video3Text: "Мені просто подобається цей ліпсик",
+          video4Title: "Гарні ліпсики біля океану",
+          video4Text: "Кохаю тебе дуже-дуже сильно",
+          video5Title: "Біжить «манюня»",
+          video5Text: "А це ж було зовсім недавно.",
+          video6Title: "Перший день у школі",
+          video6Text: "Перше вересня.",
+          video7Title: "Просто два котики",
+          video7Text: "А ось тут ми зависаємо біля Бонарки.",
+          video8Title: "Моя красунечка Velli_xv",
+          video8Text: "Ти найкрасивіша дівчинка у світі.",
+          taskTitle: "Завдання",
+          taskText: "Натисни на всіх персонажів.",
+          huntStatus: "Знайдено: {count}/16",
+          huntLocked: "Спочатку потрібно натиснути на всіх.",
+          kissAction: "Надіслати поцілунок",
+          kissMessage: "Цьом!",
+          kissAnnouncement: "Поцілунок надіслано!",
+          characterLabel: "Знайти персонажа {id}",
+          footer: "Усе для тебе, люба!",
+          videoWarning: "Відео не завантажуються при прямому відкритті файлу. Запустіть open_site.bat, щоб відкрити сторінку через сервер."
+        }
+      };
+      let currentLanguage = localStorage.getItem("siteLanguage") === "uk" ? "uk" : "ru";
+
+      const applyLanguage = (language) => {
+        currentLanguage = language;
+        localStorage.setItem("siteLanguage", language);
+        document.documentElement.lang = language;
+        document.title = translations[language].pageTitle;
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.dataset.i18n;
+          if (translations[language][key]) {
+            element.textContent = translations[language][key];
+          }
+        });
+        document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+          element.setAttribute("aria-label", translations[language][element.dataset.i18nAria]);
+        });
+        document.querySelectorAll(".character-search").forEach((button) => {
+          button.setAttribute(
+            "aria-label",
+            translations[language].characterLabel.replace("{id}", button.dataset.characterId)
+          );
+        });
+        const languageSwitch = document.querySelector(".language-switch");
+        const languageSelect = languageSwitch.querySelector("[data-language-select]");
+        const languageLabel = languageSwitch.querySelector("[data-language-label]");
+        languageSelect.value = language;
+        languageLabel.textContent = language === "uk" ? "Мова" : "Язык";
+        languageSelect.setAttribute("aria-label", language === "uk" ? "Вибір мови" : "Выбор языка");
+        updateHuntProgress();
+      };
+
+      const updateHuntProgress = () => {
+        huntStatus.textContent = translations[currentLanguage].huntStatus
+          .replace("{count}", foundCharacters.size);
+        if (foundCharacters.size === characterPlacements.length) {
+          huntNext.disabled = false;
+          huntNextLabel.textContent = kissSent
+            ? translations[currentLanguage].kissAnnouncement
+            : translations[currentLanguage].kissAction;
+        } else {
+          huntNextLabel.textContent = translations[currentLanguage].huntLocked;
+        }
+      };
+
+      const sendKiss = () => {
+        if (foundCharacters.size !== characterPlacements.length) {
+          return;
+        }
+
+        kissSent = true;
+        const buttonBounds = huntNext.getBoundingClientRect();
+        const kiss = document.createElement("div");
+        kiss.className = "kiss-animation";
+        kiss.style.left = `${buttonBounds.left + buttonBounds.width / 2}px`;
+        kiss.style.top = `${buttonBounds.top + buttonBounds.height / 2}px`;
+
+        const emoji = document.createElement("span");
+        emoji.className = "kiss-emoji";
+        emoji.textContent = "💋";
+        const caption = document.createElement("span");
+        caption.className = "kiss-caption";
+        caption.textContent = translations[currentLanguage].kissMessage;
+        kiss.append(emoji, caption);
+        kiss.addEventListener("animationend", () => kiss.remove(), { once: true });
+
+        kissOverlay.replaceChildren(kiss);
+        kissAnnouncement.textContent = translations[currentLanguage].kissAnnouncement;
+      };
+
+      characterPlacements.forEach((character) => {
+        const area = document.querySelector(character.selector);
+        if (!area) {
+          throw new Error(`Character search area not found: ${character.selector}`);
+        }
+        area.classList.add("character-search-area");
+
+        const button = document.createElement("button");
+        button.className = "character-search";
+        button.type = "button";
+        button.setAttribute("aria-label", translations[currentLanguage].characterLabel.replace("{id}", character.id));
+        button.dataset.characterId = character.id;
+        button.style.top = character.top || "";
+        button.style.right = character.right || "";
+        button.style.bottom = character.bottom || "";
+        button.style.left = character.left || "";
+
+        const image = document.createElement("img");
+        image.src = `characters/${character.image}`;
+        image.alt = "";
+        image.addEventListener("error", () => {
+          throw new Error(`Character sprite could not be loaded: ${character.image}`);
+        }, { once: true });
+        button.append(image);
+        button.addEventListener("click", () => {
+          foundCharacters.add(character.id);
+          button.remove();
+          updateHuntProgress();
+        }, { once: true });
+
+        area.append(button);
+      });
+
+      huntNext.addEventListener("click", () => {
+        sendKiss();
+      });
+
+      document.querySelector("[data-language-select]").addEventListener("change", (event) => {
+        applyLanguage(event.target.value);
+      });
+      applyLanguage(currentLanguage);
+    </script>
+  </body>
+</html>

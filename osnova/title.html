@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        place-items: center;
+        background: #120b10;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      .language-switch {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #d7b4c2;
+        font-size: 12px;
+      }
+
+      .language-switch select {
+        max-width: calc(100vw - 100px);
+        min-height: 44px;
+        padding: 8px 26px 8px 10px;
+        border: 1px solid rgba(255, 224, 232, 0.25);
+        border-radius: 999px;
+        background: #1b1016;
+        color: #d7b4c2;
+        font: inherit;
+        font-size: 11px;
+        cursor: pointer;
+      }
+
+      .language-switch option {
+        background: #1b1016;
+        color: #f8edf2;
+      }
+
+      a {
+        padding: 7px 12px;
+        border: 1px solid rgba(255, 224, 232, 0.25);
+        border-radius: 6px;
+        color: #d7b4c2;
+        font-size: 12px;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus-visible {
+        border-color: #d79bb1;
+        color: #f8edf2;
+      }
+    </style>
+  </head>
+  <body>
+    <label class="language-switch">
+      <span data-language-label>Язык</span>
+      <select aria-label="Выбор языка" data-language-select>
+        <option value="ru">Русский</option>
+        <option value="uk">Українська</option>
+      </select>
+    </label>
+    <a href="4vld.html" data-i18n="back">Вернуться обратно</a>
+    <script>
+      const translations = {
+        ru: { back: "Вернуться обратно", languageLabel: "Выбор языка" },
+        uk: { back: "Повернутися назад", languageLabel: "Вибір мови" }
+      };
+      const applyLanguage = (language) => {
+        localStorage.setItem("siteLanguage", language);
+        document.documentElement.lang = language;
+        document.querySelector("[data-i18n='back']").textContent = translations[language].back;
+        const languageSelect = document.querySelector("[data-language-select]");
+        languageSelect.value = language;
+        document.querySelector("[data-language-label]").textContent = language === "uk" ? "Мова" : "Язык";
+        languageSelect.setAttribute("aria-label", translations[language].languageLabel);
+      };
+      const savedLanguage = localStorage.getItem("siteLanguage");
+      const initialLanguage = savedLanguage === "uk" ? "uk" : "ru";
+      document.querySelector("[data-language-select]").addEventListener("change", (event) => {
+        applyLanguage(event.target.value);
+      });
+      applyLanguage(initialLanguage);
+    </script>
+  </body>
+</html>
